@@ -11,6 +11,12 @@ let songs = [
     {title: "Song 10", artists: ["Artist 10", "Artist 1"], album: "Album 10"},
 ]
 
+function populate(songs){
+    songs.forEach(song => {
+        db.songs.insertOne(song)
+    });
+}
+
 let artists = [
     {name: "Artist 1", date_of_birth: "1-12-2022", genre: ["Rock", "POP"]},
     {name: "Artist 2", date_of_birth: "2-12-2022", genre: ["Rock", "POP"]},
@@ -23,6 +29,12 @@ let artists = [
     {name: "Artist 9", date_of_birth: "9-12-2022", genre: ["Rock", "POP"]},
     {name: "Artist 10", date_of_birth: "10-12-2022", genre: ["Rock", "POP"]},
 ]
+
+function populate(artists){
+    artists.forEach(artist => {
+        db.artists.insertOne(artist)
+    });
+}
 
 let popular_song = [
     {title: "Song 1", times_played: 10, period_time: {start_date: "1-7-2023", end_date: "31-7-2023"}},
@@ -37,24 +49,8 @@ let popular_song = [
     {title: "Song 10", times_played: 1, period_time: {start_date: "10-7-2023", end_date: "9-8-2023"}},
 ]
 
-
-
-function populate(songs){
-    songs.forEach(song => {
-        db.songs.insertOne(song)
-    });
-}
-
-function populate(artists){
-    artists.forEach(artist => {
-        db.artists.insertOne(artist)
-    });
-}
-
 function populate(popular_song){
     popular_song.forEach(song => {
         db.popular_song.insertOne(song)
     });
 }
-
-
